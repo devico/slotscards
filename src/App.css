@@ -1,24 +1,143 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.wrapper-form {
+  padding-top: 60px;
+}
+
+.form-label {
+
+}
+
+.input-nick, .input-email, .input-password {
+  margin-top: 15px;
+  margin-left: 30px;
+  width: 330px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: rgba(233, 240, 250, 0.25);
+}
+
+.signup_btn {
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-bottom: 24px;
+  width: 330px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #0099ff;
+  font-family: Tahoma;
+  font-size: 14px;
+  font-weight: 600;
   text-align: center;
+  color: #ffffff;
 }
 
-.App-logo {
+.check-agree-label {
+  display: block;
+  padding-left: 45px;
+  padding-top: 17px;
+  text-indent: -17px;
+}
+
+.check-agree-input {
+  margin-top: 17px;
+  margin-left: 30px;
+  vertical-align: bottom;
+  top: -1px;
+  font-family: Tahoma;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: left;
+  color: rgba(233, 240, 250, 0.25);
+}
+
+.or-sign-up-via {
+  margin-left: 153px;
+  width: 84px;
+  height: 19px;
+  font-family: Tahoma;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: left;
+  color: rgba(233, 240, 250, 0.25);
+}
+
+.icons {
+  margin-left: 144px;
+  margin-top: 13px;
+  margin-bottom: 32px;
+}
+
+.icons a {
+  margin-right: 15px;
+}
+
+.googleBlue {
+  margin: 15px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.App-googleBlue {
+  animation: App-googleBlue-spin infinite 20s linear;
+}
+
+@keyframes App-googleBlue-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.githubBlue {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.App-githubBlue {
+  animation: App-githubBlue-spin infinite 20s linear;
+}
+
+@keyframes App-githubBlue-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.facebookBlue {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.App-facebookBlue {
+  animation: App-facebookBlue-spin infinite 20s linear;
+}
+
+@keyframes App-facebookBlue-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.have-account {
+  margin-left: 92px;
+  width: 160px;
+  height: 19px;
+  font-family: arial, verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: left;
+  color: #ffffff;
+}
+
+.App-markDown {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
+@keyframes App-markDown-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
