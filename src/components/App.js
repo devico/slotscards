@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import Page from './Page';
+import { Glyphicon } from 'react-bootstrap';
+import Header from './Header';
+import Main from './Main';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+class App extends Component {
   render() {
     return (
-      <Page />
+      <div>
+        <Header />
+        <Main />
+      </div>
     );
   }
 }
+
+export default App;
