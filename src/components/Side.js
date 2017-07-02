@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import RegistrationForm from './RegistrationForm';
 
-export default class Side extends React.Component {
-    render() {
-        return (
-            <Box>
-                <RegistrationForm />
-            </Box>
-        );
-    }
+export default class Side extends Component {
+  render() {
+    return (
+      <Box>
+        <RegistrationForm />
+      </Box>
+    );
+  }
 }
 
 const Box = styled.div`

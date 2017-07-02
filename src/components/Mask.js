@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Slider from './Slider';
 
-export default class Mask extends React.Component {
-    render() {
-        return (
-            <Section>
-                <Slider />
-            </Section>
-        );
-    }
+export default class Mask extends Component {
+  render() {
+    return (
+      <Section>
+        <Slider />
+      </Section>
+    );
+  }
 }
 
 const Section = styled.div`

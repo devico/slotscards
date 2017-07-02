@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import markdown from '../img/mark-down.svg';
 import '../App.css';
 
-export default class Slider extends React.Component {
-    render() {
-        return (
-            <div>
-                <ImgSection>
-                    <img src={markdown} className="App-markDown" alt="markdown" />
-                </ImgSection>
-                <IntroSection>Markdown markup language</IntroSection>
-                <TextSection>
-                    We satisfy the desire for fast code reading
-                    so you can highlight crucial words by using markdown.
-                </TextSection>
-            </div>
-        );
-    }
+export default class Slider extends Component {
+  render() {
+    return (
+      <div>
+        <ImgSection>
+          <img src={markdown} className="App-markDown" alt="markdown" />
+        </ImgSection>
+        <IntroSection>Markdown markup language</IntroSection>
+        <TextSection>
+          We satisfy the desire for fast code reading
+          so you can highlight crucial words by using markdown.
+        </TextSection>
+      </div>
+    );
+  }
 }
 
 const ImgSection = styled.div`

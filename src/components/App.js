@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Page from './Page';
 
-export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <Page />
-        );
-    }
+  render() {
+    return (
+      <Page />
+    );
+  }
 }
