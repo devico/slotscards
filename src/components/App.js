@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
-import Header from './Header';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Moment from 'react-moment';
+import CardsItem from './CardsItem';
 import Main from './Main';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <Main />
-      </div>
+      <Router>
+        <Route path='/' component={Main} />
+      </Router>
     );
   }
 }
-
-export default App;
