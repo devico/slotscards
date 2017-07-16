@@ -11,8 +11,7 @@ export default class Main extends Component {
       <div>
         <Header />
         <MainContainer>
-          <Route path="/cards" component={CardsList} />
-          <Route path="/cards/:cardId" component={CardsItem} />
+          <CardsList />
         </MainContainer>
       </div>
     );

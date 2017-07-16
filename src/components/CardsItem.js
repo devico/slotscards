@@ -8,7 +8,7 @@ import bookmark from '../img/bookmark.svg';
 
 export default class CardsItem extends Component {
   props = {
-    card: this.props.card
+    card: this.props.data
   }
 
   render() {

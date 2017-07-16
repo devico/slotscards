@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import CardsListItem from './CardsListItem';
-import CardsItem from './CardsItem'
+import CardsItem from './CardsItem';
 
 export default class CardsList extends Component {
   state = {
@@ -22,15 +22,17 @@ export default class CardsList extends Component {
     return (
       <BrowserRouter>
         <div>
-          <List>
-            {cards ? (
-              cards.map(item => (
-                <CardsListItem card={item} key={item.id}/>
-              ))
-            ) : (
-              <div>Loading ...</div>
-            )}
-          </List>
+          <Route path='/cards' render={() => (
+            <List>
+              {cards ? (
+                cards.map(item => (
+                  <CardsListItem card={item} key={item.id}/>
+                ))
+              ) : (
+                <div>Loading ...</div>
+              )}
+            </List>
+          )}/>
         </div>
       </BrowserRouter>
     );

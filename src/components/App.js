@@ -9,7 +9,7 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <Route path='/' component={Main} />
+        <Route path='/' component={ Main } />
       </Router>
     );
   }
