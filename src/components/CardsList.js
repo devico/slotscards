@@ -20,21 +20,18 @@ export default class CardsList extends Component {
   render() {
     const { cards } = this.state;
     return (
-      <BrowserRouter>
-        <div>
-          <Route path='/cards' render={() => (
-            <List>
-              {cards ? (
-                cards.map(item => (
-                  <CardsListItem card={item} key={item.id}/>
-                ))
-              ) : (
-                <div>Loading ...</div>
-              )}
-            </List>
-          )}/>
-        </div>
-      </BrowserRouter>
+      <div>
+        <List>
+          {cards ? (
+            cards.map(item => (
+              <div>{ this.props.children }</div>
+            ))
+          ) : (
+            <div>Loading ...</div>
+          )}
+        </List>
+        { this.props.children }
+      </div>
     );
   }
 }

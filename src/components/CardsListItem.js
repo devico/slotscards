@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
-import CardsItem from './CardsItem';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import TextTruncate from 'react-truncate';
 import like from '../img/like.svg';
@@ -16,37 +15,32 @@ export default class CardsListItem extends Component {
   render() {
     const { card } = this.props;
     return (
-      <BrowserRouter>
-        <div>
-          <ListItem>
-            <CardUserInfo>
-              <CardDate>
-                <Moment format="DD.MM.YYYY">{ card.created_at }</Moment>
-              </CardDate>
-            </CardUserInfo>
-            <CardInfo>
-              <CardTitle>
-                { card.title }
-              </CardTitle>
-              <LikePanel>
-                <Like src={ like } />
-                <Comment src={ comment } />
-                <Bookmark src={ bookmark } />
-                <Share src={ share } />
-              </LikePanel>
-              <CardIntro>
-                <TextTruncate lines={ 3 }>{ card.body }</TextTruncate>
-              </CardIntro>
-              <ReadMore>
-                <Link to={`/cards/${ card.id }`} style={{ textDecoration: 'none', color: '#0099ff' }}>Read more</Link>
-              </ReadMore>
-            </CardInfo>
-          </ListItem>
-          <Route path='/cards/:cardId' render={(props) => (
-            <CardsItem {...props} data={ card } />
-          )}/>
-        </div>
-      </BrowserRouter>
+      <div>
+        <ListItem>
+          <CardUserInfo>
+            <CardDate>
+              <Moment format="DD.MM.YYYY">{ card.created_at }</Moment>
+            </CardDate>
+          </CardUserInfo>
+          <CardInfo>
+            <CardTitle>
+              { card.title }
+            </CardTitle>
+            <LikePanel>
+              <Like src={ like } />
+              <Comment src={ comment } />
+              <Bookmark src={ bookmark } />
+              <Share src={ share } />
+            </LikePanel>
+            <CardIntro>
+              <TextTruncate lines={ 3 }>{ card.body }</TextTruncate>
+            </CardIntro>
+            <ReadMore>
+              <Link to={`/cards/${ card.id }`} style={{ textDecoration: 'none', color: '#0099ff' }}>Read more</Link>
+            </ReadMore>
+          </CardInfo>
+        </ListItem>
+      </div>
     );
   }
 }

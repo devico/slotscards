@@ -7,10 +7,6 @@ import comment from '../img/comment.svg';
 import bookmark from '../img/bookmark.svg';
 
 export default class CardsItem extends Component {
-  props = {
-    card: this.props.data
-  }
-
   render() {
     const { card } = this.props;
     return (
@@ -50,7 +46,7 @@ const CardTitle = styled.div`
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: transparent;
   margin-top: 0;
-  color: #29404B;
+  color: red;
   font-size: 30px;
 `;
 

@@ -9,10 +9,7 @@ export default class Main extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <MainContainer>
-          <CardsList />
-        </MainContainer>
+        {this.props.children}
       </div>
     );
   }
