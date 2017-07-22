@@ -7,6 +7,14 @@ import comment from '../img/comment.svg';
 import bookmark from '../img/bookmark.svg';
 
 export default class CardsItem extends Component {
+  static contextTypes = {
+    router: PropTypes.object
+  };
+
+  componentDidMount() {
+    this.props.getCard(this.props.cardId);
+  }
+
   render() {
     const { card } = this.props;
     return (

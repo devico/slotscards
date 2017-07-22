@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import Header from './Header';
 import CardsList from './CardsList';
-import CardsItem from './CardsItem';
+import CardsItem from './CardsList';
+
+const Home = () => (
+  <div>
+    <h1>Welcome!</h1>
+  </div>
+);
 
 export default class Main extends Component {
   render() {
     return (
-      <div>
-        {this.props.children}
-      </div>
+      <MainContainer>
+        <Switch>
+          <Route exact path='/' component={ Home }/>
+          <Route path='/cards' component={ CardsList }/>
+          <Route path='/cards/:id' component={CardsItem} />
+        </Switch>
+      </MainContainer>
     );
   }
 }

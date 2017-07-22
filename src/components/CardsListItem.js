@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import TextTruncate from 'react-truncate';
 import like from '../img/like.svg';
@@ -9,14 +9,10 @@ import bookmark from '../img/bookmark.svg';
 import share from '../img/share-1.svg';
 
 export default class CardsListItem extends Component {
-  props = {
-    card: this.props.card
-  }
   render() {
-    const { card } = this.props;
     return (
       <div>
-        <ListItem>
+        <ListItem key={card.id}>
           <CardUserInfo>
             <CardDate>
               <Moment format="DD.MM.YYYY">{ card.created_at }</Moment>
