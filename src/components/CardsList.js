@@ -1,48 +1,35 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Switch, Route, Link } from 'react-router-dom';
+import { getCards } from '../actions/cards';
 import Moment from 'react-moment';
 import TextTruncate from 'react-truncate';
 import like from '../img/like.svg';
 import comment from '../img/comment.svg';
 import bookmark from '../img/bookmark.svg';
 import share from '../img/share-1.svg';
+import CardsListItem from './CardsListItem';
 
 export default class CardsList extends Component {
-  componentWillMount() {
-    this.props.getCards();
+  state = {
+    cards: null
+  }
+
+  componentDidMount() {
+    getCards().then(cards => this.setState({ cards }));
   }
 
   render() {
-    const { cards } = this.props.cardsList;
+    const { cards } = this.state;
     return (
       <List>
-        { cards.map((card) => {
-          <ListItem key={card.id}>
-            <CardUserInfo>
-              <CardDate>
-                <Moment format="DD.MM.YYYY">{ card.created_at }</Moment>
-              </CardDate>
-            </CardUserInfo>
-            <CardInfo>
-              <CardTitle>
-                { card.title }
-              </CardTitle>
-              <LikePanel>
-                <Like src={ like } />
-                <Comment src={ comment } />
-                <Bookmark src={ bookmark } />
-                <Share src={ share } />
-              </LikePanel>
-              <CardIntro>
-                <TextTruncate lines={ 3 }>{ card.body }</TextTruncate>
-              </CardIntro>
-              <ReadMore>
-                <Link to={`/cards/${ card.id }`} style={{ textDecoration: 'none', color: '#0099ff' }}>Read more</Link>
-              </ReadMore>
-            </CardInfo>
-          </ListItem>;
-        })};
+        {cards ? (
+          cards.map(item => (
+            <CardsListItem card={item} key={item.id}/>
+          ))
+        ) : (
+          <div>Loading ...</div>
+        )}
       </List>
     );
   }

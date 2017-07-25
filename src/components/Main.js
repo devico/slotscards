@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Route, Switch, Link } from 'react-router-dom';
-import Header from './Header';
-import CardsList from './CardsList';
-import CardsItem from './CardsList';
-
-const Home = () => (
-  <div>
-    <h1>Welcome!</h1>
-  </div>
-);
+import Cards from './Cards';
+import Home from './Home';
 
 export default class Main extends Component {
   render() {
@@ -17,8 +10,7 @@ export default class Main extends Component {
       <MainContainer>
         <Switch>
           <Route exact path='/' component={ Home }/>
-          <Route path='/cards' component={ CardsList }/>
-          <Route path='/cards/:id' component={CardsItem} />
+          <Route path='/cards' component={ Cards }/>
         </Switch>
       </MainContainer>
     );

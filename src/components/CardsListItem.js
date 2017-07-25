@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
+import CardsItem from './CardsItem';
 import Moment from 'react-moment';
 import TextTruncate from 'react-truncate';
 import like from '../img/like.svg';
@@ -10,6 +11,7 @@ import share from '../img/share-1.svg';
 
 export default class CardsListItem extends Component {
   render() {
+    const { card } = this.props;
     return (
       <div>
         <ListItem key={card.id}>

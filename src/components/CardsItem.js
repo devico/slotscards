@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Moment from 'react-moment';
+import { getCard } from '../actions/cards';
 import like from '../img/like.svg';
 import comment from '../img/comment.svg';
 import bookmark from '../img/bookmark.svg';
 
 export default class CardsItem extends Component {
-  static contextTypes = {
-    router: PropTypes.object
-  };
-
-  componentDidMount() {
-    this.props.getCard(this.props.cardId);
-  }
+  // state = {
+  //   card: null
+  // }
+  //
+  // componentDidMount() {
+  //   getCards(parseInt(props.match.params.id, 10)).then(card => this.setState({ card }));
+  // }
 
   render() {
-    const { card } = this.props;
+    const { card } = this.state;
     return (
       <CardItem>
         <CardUserInfo>
