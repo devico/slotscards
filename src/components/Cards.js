@@ -10,7 +10,7 @@ export default class Cards extends Component {
       <CardContainer>
         <Switch>
           <Route exact path='/cards' component={ CardsList }/>
-          <Route path='/cards/:id' component={ CardsItem } />
+          <Route path='/cards/:cardId' component={ CardsItem } />
         </Switch>
       </CardContainer>
     );

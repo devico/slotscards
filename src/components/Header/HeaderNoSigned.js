@@ -1,35 +1,29 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export default class Header extends Component {
+export default class HeaderNoSigned extends Component {
   render() {
     return (
-      <HeaderBar>
+      <div>
         <TitleCards>
-          Cards
+          Most recent cards
         </TitleCards>
         <SignInOrSignUp>
-          <a href="#">SignIn or SignUp</a>
+          <Link to='/users/signin' style={{ textDecoration: 'none', color: '#0099ff' }}>Sign in or Sign up</Link>
         </SignInOrSignUp>
-      </HeaderBar>
+      </div>
     );
   }
 }
 
-const HeaderBar = styled.div`
-  width: 1296px;
-  height: 70px;
-  background-color: #ffffff;
-  box-shadow: 0 -8px 17px 0 rgba(0, 0, 0, 0.5);
-`;
-
 const TitleCards = styled.div`
   float: left;
-  margin-left: 100px;
-  padding-top: 17px;
-  width: 242px;
+  margin-left: 30px;
+  margin-top: 17px;
+  width: 250px;
   height: 36px;
-  font-family: arial, verdana, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 28px;
   font-weight: 600;
   line-height: 1.29;
@@ -43,7 +37,7 @@ const SignInOrSignUp = styled.div`
   padding-top: 26px;
   width: 117px;
   height: 19px;
-  font-family: arial, verdana, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 600;
   text-align: justify;

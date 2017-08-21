@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Mask from './Mask';
 import Side from './Side';
 
-export default class Page extends Component {
+export default class PageSigninSignup extends Component {
   render() {
     return (
       <Background>

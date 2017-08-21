@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Route, Switch, Link } from 'react-router-dom';
+import Header from './Header/Header';
 import Cards from './Cards';
-import Home from './Home';
+import StartPage from './StartPage';
+import PageSigninSignup from './PageSigninSignup';
 
 export default class Main extends Component {
   render() {
     return (
-      <MainContainer>
+      <Container>
+        <Header />
         <Switch>
-          <Route exact path='/' component={ Home }/>
+          <Route exact path='/' component={ StartPage }/>
           <Route path='/cards' component={ Cards }/>
+          <Route path='/users/signin' component={ PageSigninSignup }/>
         </Switch>
-      </MainContainer>
+      </Container>
     );
   }
 }
 
-const MainContainer = styled.div`
-  width: 1366px;
+const Container = styled.div`
+  width: 1296px;
   height: 1302px;
   background-color: #ffffff;
 `;

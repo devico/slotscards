@@ -8,36 +8,42 @@ import comment from '../img/comment.svg';
 import bookmark from '../img/bookmark.svg';
 
 export default class CardsItem extends Component {
-  // state = {
-  //   card: null
-  // }
-  //
-  // componentDidMount() {
-  //   getCards(parseInt(props.match.params.id, 10)).then(card => this.setState({ card }));
-  // }
+  state = {
+    card: null
+  }
+
+  componentDidMount() {
+    getCard(this.props.match.params.cardId).then(card => this.setState({ card }));
+  }
 
   render() {
     const { card } = this.state;
     return (
       <CardItem>
-        <CardUserInfo>
-          <CardDate>
-            <Moment format="DD.MM.YYYY">{card.created_at}</Moment>
-          </CardDate>
-          <LikePanel>
-            <Like src={like} />
-            <Comment src={comment} />
-            <Bookmark src={bookmark} />
-          </LikePanel>
-        </CardUserInfo>
-        <CardInfo>
-          <CardTitle>
-            {card.title}
-          </CardTitle>
-          <CardBody>
-            {card.body}
-          </CardBody>
-        </CardInfo>
+        {card ? (
+          <div>
+            <CardUserInfo>
+              <CardDate>
+                <Moment format="DD.MM.YYYY">{card.created_at}</Moment>
+              </CardDate>
+              <LikePanel>
+                <Like src={like} />
+                <Comment src={comment} />
+                <Bookmark src={bookmark} />
+              </LikePanel>
+            </CardUserInfo>
+            <CardInfo>
+              <CardTitle>
+                {card.title}
+              </CardTitle>
+              <CardBody>
+                {card.body}
+              </CardBody>
+            </CardInfo>
+          </div>
+        ) : (
+          <div>Loading Card ...</div>
+        )}
       </CardItem>
     );
   }
