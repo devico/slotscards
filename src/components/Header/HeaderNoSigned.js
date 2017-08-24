@@ -10,7 +10,7 @@ export default class HeaderNoSigned extends Component {
           Most recent cards
         </TitleCards>
         <SignInOrSignUp>
-          <Link to='/users/signin' style={{ textDecoration: 'none', color: '#0099ff' }}>Sign in or Sign up</Link>
+          <Link to='/users/signup' style={{ textDecoration: 'none', color: '#0099ff' }}>Sign in or Sign up</Link>
         </SignInOrSignUp>
       </div>
     );

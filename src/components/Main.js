@@ -14,6 +14,7 @@ export default class Main extends Component {
         <Switch>
           <Route exact path='/' component={ StartPage }/>
           <Route path='/cards' component={ Cards }/>
+          <Route path='/users/signup' component={ PageSigninSignup }/>
           <Route path='/users/signin' component={ PageSigninSignup }/>
         </Switch>
       </Container>

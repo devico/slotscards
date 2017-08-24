@@ -19,7 +19,6 @@ export default class SocialRegister extends Component {
             <img src={facebookblue} class="facebookBlue App-facebookBlue" alt="facebookblue" />
           </a>
         </div>
-        <span className='have-account' >Already have an account? <a href="#">Sign in</a></span>
       </div>
     );
   }

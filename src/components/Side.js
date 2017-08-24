@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Route, Switch } from 'react-router-dom';
 import RegistrationForm from './RegistrationForm';
+import LoginForm from './LoginForm';
 
 export default class Side extends Component {
   render() {
     return (
       <Box>
-        <RegistrationForm />
+        <Switch>
+          <Route path='/users/signin' component={ LoginForm }/>
+          <Route path='/users/signup' component={ RegistrationForm }/>
+        </Switch>
       </Box>
     );
   }
