@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { signIn } from '../actions/users';
 import SocialRegister from './SocialRegister';
 import '../App.css';
 
@@ -18,7 +19,8 @@ export default class LoginForm extends Component {
   onBtnClickHandler = (e) => {
     e.preventDefault();
     let email = this.refs.email.value;
-    alert(email);
+    let password = this.refs.password.value;
+    signIn(email, password);
   }
 
   onCheckAgreeClick = (e) => {

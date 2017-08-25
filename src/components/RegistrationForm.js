@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import { signUp } from '../actions/users';
 import styled from 'styled-components';
 import SocialRegister from './SocialRegister';
 import '../App.css';
@@ -21,8 +22,8 @@ export default class RegistrationForm extends Component {
   onBtnClickHandler = (e) => {
     e.preventDefault();
     let email = this.refs.email.value;
-    let nick = this.refs.nick.value;
-    alert(email + '\n' + nick);
+    let password = this.refs.password.value;
+    signUp(email, password);
   }
 
   onCheckAgreeClick = (e) => {
