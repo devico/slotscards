@@ -1,21 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
-import { signUp } from '../actions/users';
 import styled from 'styled-components';
+import { signIn } from '../actions/users';
 import SocialRegister from './SocialRegister';
 import '../App.css';
 
-export default class RegistrationForm extends Component {
+export default class LoginForm extends Component {
   state = {
-    agreeNotChecked: true,
     emailIsEmpty: true,
-    nickIsEmpty: true,
     passwordIsEmpty: true
   };
   static propTypes = {
     email: PropTypes.string.isRequired,
-    nick: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired
   };
 
@@ -23,7 +20,7 @@ export default class RegistrationForm extends Component {
     e.preventDefault();
     let email = this.refs.email.value;
     let password = this.refs.password.value;
-    signUp(email, password);
+    signIn(email, password);
   }
 
   onCheckAgreeClick = (e) => {
@@ -40,15 +37,13 @@ export default class RegistrationForm extends Component {
   }
   render() {
     const {
-      agreeNotChecked,
       emailIsEmpty,
-      nickIsEmpty,
       passwordIsEmpty
     } = this.state;
 
     return (
       <WrapperForm>
-        <FormLabel>SIGN UP</FormLabel>
+        <FormLabel>SIGN IN</FormLabel>
         <form onSubmit={this.onBtnClickHandler.bind(this)}>
           <input
             type='text'
@@ -58,54 +53,42 @@ export default class RegistrationForm extends Component {
             ref='email'
           />
           <input
-            type='text'
-            className='input-nick'
-            onChange={this.onFieldChange.bind(this, 'nickIsEmpty')}
-            placeholder='Nick'
-            ref='nick'
-          />
-          <input
             type='password'
             className='input-password'
             onChange={this.onFieldChange.bind(this, 'passwordIsEmpty')}
             placeholder='Password (8 characters minimum)'
             ref='password'
           />
-          <label className='check-agree-label'>
-            <input
-              className='check-agree-input'
-              type='checkbox'
-              ref='checkagree'/>
-                I agree with <a href="#">Terms of use</a> and <a href="#">Privacy policy</a>
-          </label>
           <button
             className='signup_btn'
             ref='reg_button'
-            disabled={agreeNotChecked || emailIsEmpty || nickIsEmpty || passwordIsEmpty}
+            disabled={emailIsEmpty || passwordIsEmpty}
           >
-            Continue registration
+            Sign in
           </button>
         </form>
         <span className='or-sign-up-via'>or sign up via</span>
         <SocialRegister />
-        <span className='dont-have-an-account'>Already have an account? </span>
-        <Link to="/users/signin" style={{ textDecoration: 'none', color: '#0099ff' }}>Sign in</Link>
+        <span className='dont-have-an-account'>
+          Don’t have an account?
+          <Link to="/users/signup" style={{ textDecoration: 'none', color: '#0099ff' }}>Sign up</Link>
+        </span>
+
       </WrapperForm>
     );
   }
 }
 
 const WrapperForm = styled.div`
-    padding-top: 60px;
+    padding-top: 113px;
 `;
 
 const FormLabel = styled.span`
-    margin-left: 154px;
-    margin-top: 60px;
-    width: 82px;
+    margin-left: 54px;
+    width: 77px;
     height: 27px;
     font-family: arial, verdana, sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     text-align: left;
     color: #e9f0fa;
